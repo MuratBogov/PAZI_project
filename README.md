@@ -31,6 +31,7 @@ gcc -o ch_uid ch_uid.c
 gcc -o cap_exec cap_exec.c
 
 Далее выдайте необходимые привилегии программе cap_exec:
+
 sudo setcap cap_setuid,cap_setgid+ep cap_exec
 
 ### Запуск
