@@ -30,6 +30,9 @@
 gcc -o ch_uid ch_uid.c
 gcc -o cap_exec cap_exec.c
 
+Далее выдайте необходимые привилегии программе cap_exec:
+sudo setcap cap_setuid,cap_setgid+ep cap_exec
+
 ### Запуск
 Для выполнения программ используйте следующую команду:
 ./cap_exec ./ch_uid <имя_пользователя>
@@ -38,7 +41,7 @@ gcc -o cap_exec cap_exec.c
 - <имя_пользователя> — имя пользователя, на которого будут изменены UID и GID.
 
 ### Пример
-sudo ./cap_exec ./ch_uid john
+./cap_exec ./ch_uid john
 
 Эта команда:
 1. Использует cap_exec для предоставления привилегий CAP_SETUID и CAP_SETGID программе ch_uid.
