@@ -27,16 +27,18 @@
 ### Компиляция
 Скомпилируйте обе программы с помощью GCC:
 
-gcc -o ch_uid ch_uid.c
-gcc -o cap_exec cap_exec.c
+`gcc -o ch_uid ch_uid.c`
+
+`gcc -o cap_exec cap_exec.c`
 
 Далее выдайте необходимые привилегии программе cap_exec:
 
-sudo setcap cap_setuid,cap_setgid+ep cap_exec
+`sudo setcap cap_setuid,cap_setgid+ep cap_exec`
 
 ### Запуск
 Для выполнения программ используйте следующую команду:
-./cap_exec ./ch_uid <имя_пользователя>
+
+`./cap_exec ./ch_uid <имя_пользователя>`
 
 Где:
 - <имя_пользователя> — имя пользователя, на которого будут изменены UID и GID.
